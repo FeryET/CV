@@ -44,7 +44,7 @@
 \usepackage{trimspaces} % Required for triming variable values (https://tex.stackexchange.com/a/484290)
 \usepackage{fontawesome} % Required for icons. List of available icons at http://ctan.imsc.res.in/fonts/fontawesome/doc/fontawesome.pdf
 \usepackage{datetime} % Required for custom date formatting
-\usepackage[left=0.5in,top=0.25in,right=0.5in,bottom=0.25in]{geometry} % Required for setting Document margins
+\usepackage[left=0.75in,top=0.75in,right=0.75in,bottom=0.75in]{geometry} % Required for setting Document margins
 \usepackage{scrextend}
 \pagestyle{empty} % Suppress page numbers
 
@@ -80,11 +80,9 @@
 		\newbox\anonvhbox
 		\newboolean{IncludeAnonItem}
 		\setboolean{IncludeAnonItem}{#1}
-		
 		\setbox\anonvhbox\vbox{%
 			#2
 			\unskip\unpenalty\unpenalty}
-		
 		\ifthenelse{\boolean{IncludeAnonItem}}{
 			\unvbox\anonvhbox
 		}{ }
@@ -320,6 +318,15 @@
 	}\unskip
 }{}
 
+\newcommand{\rEducationSubsectionHeading}[6]{ % 6 input arguments: school name, dates, degree, location, GPA, and notes
+    \textbf{#1}, #4 \hfill \textit{#2} \\ % Bold school name and location, italic dates aligned to the right
+    \textit{#3}, GPA: #5 % Italic degree, normal font GPA
+    \ifthenelse{\equal{#6}{}}{}{ % If notes are provided
+        \begin{addmargin}[10pt]{20pt} % Indented notes
+            \textit{#6} % Italic notes
+        \end{addmargin}
+    }
+}
 % The below commands define the whitespace after certain things in the document - they can be \smallskip, \medskip or \bigskip
 \def\namesize{\huge} % Size of the name at the top of the document
 \def\sectionlineskip{\medskip} % The space above the horizontal line for each section 

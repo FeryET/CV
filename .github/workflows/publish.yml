@@ -19,7 +19,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: $TEX_FILE
+          root_file: ${{ env.TEX_FILE }}
       - name: move
         run: mkdir -p ${{ env.ARTIFACTS_DIR}} && mv ${{ env.PDF_FILE }} ${{ env.ARTIFACTS_DIR }}
       - name: Upload PDF file
