@@ -23,7 +23,7 @@ jobs:
       - name: move
         run: mkdir -p ${{ env.ARTIFACTS_DIR}} && mv ${{ env.PDF_FILE }} ${{ env.ARTIFACTS_DIR }}
       - name: Upload PDF file
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.PDF_FILE }}
           path: ${{ env.ARTIFACTS_DIR }}/${{ env.PDF_FILE }}
