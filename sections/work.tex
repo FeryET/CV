@@ -13,14 +13,16 @@
 		\normalfont
 		\begin{list}{$\cdot$}{\leftmargin=10pt\normalfont \rightmargin=20pt}
 			\itemsep -0.5em
-			\item Took initiative in the design and development process of a brand new service to handle 5x rps with 0.1x resources using go to replace an old bottleneck python service.
 			\item Took inititative in the process of revamping the team's monitoring/alerting mechanism, developing various new dashboards and alert rules with on-call support.
-			\item Administered a 10 Node hadooop cluster, with high availability settings using Ansible deployed on baremetal.
+			\item Administered a 10 Node hadooop cluster, with high availability settings using Ansible deployed on a baremetal cluster.
 			\item Administered a 16 Node K8s cluster for the data platform team, with various production services on it (Airflow, Spark, Kafka Connectors).
 			\item Utilized, improved and developed various helm charts for internal toolings and production services, e.g. Hue HDFS Browser, JupyterHub.
 			\item Adminstered a K8s based spark development workflow utilizing JupyterHub, SparkOperator, Airflow which enabled data teams to rapidly prototype and create data.
-			\item Implemented an automatic data lineage tracking pipeline using Datahub's integrations with CI/CD pipelines to increase metadata observability company wide.
 			\item Introduced a set of MLOps toolings to define the standard ml workflow in Yektanet using Ray, Spark, MLFlow on top of k8s.
+			\item Developed a new set of kafka connectors that synced data from kafka to HDFS, and designed a local workflow to test these before deployment.
+			\item Developed a new set of airflow dags to ingest data from various sources to HDFS via IceBerg, and sync from IceBerg to clickhouse.
+			\item Adminstered a 2 node clickhouse cluster setup on K8s, developing monitroing mechanism to track data ingestion from OLTP sources.
+			\item Took initiative in the design and development process of a brand new service to handle 5x rps with 0.1x resources using Go to replace an old bottleneck python service.
 		\end{list}
 	\end{rWorkSection}
 
